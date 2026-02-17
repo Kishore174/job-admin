@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e834af70.css",
+    "main.js": "/static/js/main.3e6c7c1d.js",
+    "static/js/453.90bcb466.chunk.js": "/static/js/453.90bcb466.chunk.js",
+    "static/media/dbskills-logo.webp": "/static/media/dbskills-logo.30261a8b42370bbdd53a.webp",
+    "index.html": "/index.html",
+    "main.e834af70.css.map": "/static/css/main.e834af70.css.map",
+    "main.3e6c7c1d.js.map": "/static/js/main.3e6c7c1d.js.map",
+    "453.90bcb466.chunk.js.map": "/static/js/453.90bcb466.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e834af70.css",
+    "static/js/main.3e6c7c1d.js"
+  ]
+}
