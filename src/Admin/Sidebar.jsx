@@ -3,27 +3,64 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdOutlineDashboard } from "react-icons/md";
 import { FaSignOutAlt } from "react-icons/fa";
 import logo from "../Assets/logo.png";
-
+import { jwtDecode } from "jwt-decode";
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const role = localStorage.getItem("role");
+const token = localStorage.getItem("token");
+let role = null;
 
-  const menuItems = [
+if (token) {
+  const decoded = jwtDecode(token);
+  role = decoded.role;
+}
+const menuItems = [
+  {
+    name: "Dashboard",
+    href: "/dash",
+    icon: <MdOutlineDashboard />,
+    roles: ["admin","student"],
+  },
+  {
+    name: "Job",
+    href: "/global",
+    icon: <MdOutlineDashboard />,
+    roles: ["admin"],
+  },
+  {
+    name: "Student",
+    href: "/student",
+    icon: <MdOutlineDashboard />,
+    roles: ["admin"],
+  },
     {
-      name: "Dashboard",
-      href: "/dash",
-      icon: <MdOutlineDashboard />,
-      roles: ["admin"],
-    },
-    {
-      name: "Job",
-      href: "/global",
-      icon: <MdOutlineDashboard />,
-      roles: ["admin"],
-    },
-  ];
+    name: "Applies",
+    href: "/applies",
+    icon: <MdOutlineDashboard />,
+    roles: ["admin"],
+  },
+  {
+    name: "Premium Job",
+    href: "/premium",
+    icon: <MdOutlineDashboard />,
+    roles: ["student"],   // 👈 both can see
+  },{
+  name: "Premium Manage",
+  href: "/premium-manage",
+  icon: <MdOutlineDashboard />,
+  roles: ["admin"],
+},
+{
+  name: "HR Settings",
+  href: "/hr-settings",
+  icon: <MdOutlineDashboard />,
+  roles: ["admin"],
+},
+
+
+];
+
 
   const handleLogout = () => {
     localStorage.clear();

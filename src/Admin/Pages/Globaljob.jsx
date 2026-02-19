@@ -180,21 +180,28 @@ const Globaljob = () => {
                   </span>
                 </td>
 
-                <td className="px-6 py-4 text-center space-x-3">
-                  <button
-                    onClick={() => handleEdit(job)}
-                    className="p-2 rounded-lg bg-yellow-100 text-yellow-600 hover:bg-yellow-200 transition"
-                  >
-                    <PlusIcon size={16} />
-                  </button>
+<td className="px-6 py-4 text-center">
+  <div className="flex justify-center items-center gap-3">
 
-                  <button
-                    onClick={() => handleDelete(job._id)}
-                    className="p-2 rounded-lg bg-red-100 text-red-600 hover:bg-red-200 transition"
-                  >
-                    <PencilSquareIcon size={16} />
-                  </button>
-                </td>
+    {/* Edit Button */}
+    <button
+      onClick={() => handleEdit(job)}
+      className="p-2 rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition"
+    >
+      <PencilSquareIcon className="w-5 h-5" />
+    </button>
+
+    {/* Delete Button */}
+    <button 
+      onClick={() => handleDelete(job._id)}
+      className="p-2 rounded-lg bg-red-100 text-red-600 hover:bg-red-200 transition"
+    >
+      <TrashIcon className="w-5 h-5" />
+    </button>
+
+  </div>
+</td>
+
               </tr>
             ))}
           </tbody>

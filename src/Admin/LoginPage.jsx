@@ -21,13 +21,12 @@ const handleSubmit = async (e) => {
       password: password,
     });
 
-    if (res.success) {
-      toast.success("Login Successful");
+  if (res.success) {
+  toast.success("Login Successful");
 
-      localStorage.setItem("token", res.token);
-      localStorage.setItem("role", res.role);
+  localStorage.setItem("token", res.token);
 
-      navigate("/dash");
+  navigate("/dash");
     } else {
       toast.error(res.message || "Login failed");
     }
