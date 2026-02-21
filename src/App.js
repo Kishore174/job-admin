@@ -22,6 +22,7 @@ import PremiumJob from "./Admin/Pages/Premiumjob";
 import PremiumManage from "./Admin/Pages/PremiumManage";
 import HrSettings from "./Admin/Pages/HrSettings";
 import AdminApplications from "./Admin/Pages/AdminApplications";
+import StudentProfile from "./Admin/Pages/Studentprofile";
  
 
  
@@ -59,14 +60,14 @@ function App() {
   }
 />
 
-    <Route
+    {/* <Route
             path="global"
             element={
               <RoleRoute allowed={["admin"]}>
                 <Globaljob />
               </RoleRoute>
             }
-          />
+          /> */}
            <Route
             path="student"
             element={
@@ -104,6 +105,14 @@ function App() {
   element={
     <RoleRoute allowed={["admin"]}>
       <AdminApplications/>
+    </RoleRoute>
+  }
+/>
+ <Route
+  path="profile"
+  element={
+    <RoleRoute allowed={["student"]}>
+      <StudentProfile/>
     </RoleRoute>
   }
 />
